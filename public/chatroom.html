@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link  href="styles.css" rel="stylesheet" >
+<title>Chatroom</title>
+</head>
+<body>
+
+<h1 class="title">4 Forks & 4 Engineers Chat Server</h1>
+<p class="heading">Feel free to talk here.</p>
+<h1><  Welcome to the Chatroom   ></h1>
+<button class="leave" onclick="leaveChat()">Leave Chat</button>
+<div class="inputHolder">
+    <input class="message" placeholder="  Enter a message here........" autocomplete="off" id="messageSent">
+    <button  class="send" type='submit' onclick="submit()">Send Message</button>
+    
+</div>
+<br>
+<br>
+<div class ="room" >
+<br>
+<div id="messages" class="chatmessage">
+
+</div>
+<div id="disconnect">
+
+</div>
+
+
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src='main.js'></script>
+
+
+
+
+</body>
+</html>

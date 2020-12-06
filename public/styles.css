@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+* {
+ font-family: "Lucida Console", "Courier New", monospace;
+ background-color:rgb(255, 251, 255)''
+}
+
+h2{
+    font-family: 'Nerko One';
+    background-color: whitesmoke;
+   
+}
+
+.title{
+  color: rebeccapurple;  
+  text-align: center;
+  background-color: whitesmoke;
+  font-family: 'Nerko One';
+  font-size: 70px;
+  margin-top:0.5px;
+}
+
+.heading{
+ color: pink;
+ font-size: 60px;
+ font-family: 'Nerko One';
+ text-align: center;
+ background-color: whitesmoke;
+}
+
+body{
+    background-color: whitesmoke;
+
+}
+
+h1{
+    font-family: 'Nerko One';
+    background-color:whitesmoke;
+    text-align: center;
+}
+
+.show{
+   border: solid black;
+   background-color: whitesmoke;
+   border-radius: 6px;
+    color: black;
+    margin-top: 180px;
+    width: 800px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.show2{
+    background-color: whitesmoke;
+    width: 400px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+}
+.rooms{
+    width: 309px;
+    height: 30px;
+    border-radius: 3px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-left: 13px;
+}
+label{
+    margin-left:30px;
+    display: inline-block;
+   
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.username{
+    width: 300px;
+    height: 30px;
+    border-radius: 3px;
+    font: bolder;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.submit{
+    width: 300px;
+    height: 30px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-left: 100px;
+}
+/* chat room styling */
+.room{
+    background-color:rgb(218, 234, 240);
+    margin-left: 30px;
+    text-align: center;
+    width: 800px;
+    height: 500px;
+    overflow: auto;
+    overflow-y: visible;
+}
+
+.message{
+    margin-top: 275px;
+    width: 400px;
+    height: 50px;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+
+.send{
+    height: 50px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+
+.leave{
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: rebeccapurple;
+    color:white;
+    border-radius: 10px;
+    margin-left: 30px;
+    height: 30px;
+    
+}
+
+.inputHolder{
+float: right;
+position: relative;;
+margin-right: 30px;
+   
+}
+
+
+
+
+
+p{
+    background-color: whitesmoke;
+    width: fit-content;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding : 5px 5px 5px;
+    font-weight: bold;
+    text-align: left;
+}
