@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "http-shutdown": "^1.2.2",
     "node": "^15.3.0",
     "socketio": "^1.0.0"
   },

@@ -1,82 +1,52 @@
+  const socket = io(); // open up a socket to listen and send messages through
 
 
-const socket = io();
 
-//function to return to main page
-function leaveChat(){
+  //function to leave the chat room 
+  function leaveChat(){
     window.location.href ="index.html";
-    
-}
-var username = localStorage.getItem("Name")
-var check = document.getElementById("messageSent").value
-function submit(){
-    var inputbox = document.getElementById("messageSent");
-    inputbox.innerHTML = "";
-  //get message text
-  const messageSent = username + ": " + (document.getElementById("messageSent").value ) ;
+  }
   
-  //emit message to the server
-  socket.emit('ChatMessage' ,  messageSent  );
-}
+  // get the username and room number from local storage
+  var username = localStorage.getItem("Name")
+  var room = localStorage.getItem("Room")
+
+  socket.emit('joinRoom',({username,room})) // send the username and room to the server
+
+  function submit(){// function to send results 
+    var inputbox = document.getElementById("messageSent");// get the div by the id
+    inputbox.innerHTML = "";// set the innerhtml of the div to empty after each message is sent
+  //get message text
+    const messageSent =  username + ":"+ (document.getElementById("messageSent").value ) ;
+  
+    socket.emit('ChatMessage' ,  messageSent  );// emit message back to the server 
+
+  
+  }
+
 
 // displays the message sent by the server by appending into the div 
-socket.on('message', message => {
- 
-    var div = document.getElementById("messages");
-    var textholder = document.createElement("p");
-    textholder.style.marginTop = "30px"
-    var text = document.createTextNode( message);
-    textholder.appendChild(text);
-    div.appendChild(textholder);
-  
+  socket.on('message', message => {
+    console.log(message)
+  if(message == "Server Closing....."){
+      alert("Server Closing...... Terminating all chats and Redirecting.");
+      window.location.href = "index.html";
+    
+  }else{
+    // use dom to append message recieved into the div
+      var div = document.getElementById("messages");
+      var textholder = document.createElement("p");
+      textholder.style.marginTop = "30px"
+      var text = document.createTextNode( message);
+      textholder.appendChild(text);
+      div.appendChild(textholder);
+  }
   });
 
   
- 
-
-  /*THIS CODE HAS NOT BEEN TESTED, THIS IS FOR SHOWING THE MESSAGE THAT THE USER IS LEAVING THE CHAT. Try it out for now */
-  // socket.on('disconnect', disconnect=>{
-  //     console.log(disconnect);
-  //     var div = document.getElementById("disconnect")
-  //     var textholder = document.createElement("p")
-  //       var text = document.createTextNode(message);
-  //       textholder.appendChild(text);
-  //       div.appendChild(textholder)
-  // })
 
 
   
-  //Message Submit
+ 
 
-  //ChatForm.addEventListener('submit', (e) =>{
-     // e.preventDefault();
-      //)
-/*
-function FormatMessage(username, text){
-  return{
-    username,
-    text
-  }
-}
-module.exports = FormatMessage;*/
-
-/*
-  function displayMessage(){
-    const displayMessage = document.createElement("div");
-    displayMessage.classList.add("message")
-    const p = document.createElement("p");
-    p.innerText = message.username;
-}
-*/
-
-/*
-function showUser(){
-    allUsers.innerHTML = "";
-    allUser.forEach(user=>{
-        const list = document.createElement("li");
-        list.innerText=user.username;
-        
-    })
-}
-*/
  
